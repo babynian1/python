@@ -1,0 +1,103 @@
+from tkinter import *
+from tkinter import ttk
+
+
+class deteksi:
+    def __init__(self,root):
+        self.root = root
+        self.root.title=("Klarifikasi Imunodefisiensi HIV")
+        self.root.geometry("1150x700+0+0")
+
+        #variabel
+        self.nama = StringVar()
+        self.id = StringVar()
+        self.jk = StringVar()
+        self.umur = IntVar()
+        self.schr = IntVar()
+        self.schl = IntVar()
+        self.cd4 = IntVar()
+        self.cd8 = IntVar()
+
+        title = Label(self.root, text="Klarifikasi Imunodefisiensi HIV", font=("times new roman", 28, "bold"), bg="aqua",fg="white", bd=10, relief=GROOVE)
+        title.place(x=0, y=0, relwidth=1)
+
+        #frame1
+        frame = Frame(self.root, relief=RIDGE, bg="grey")
+        frame.place(x=20, y=70, width=475, height=620)
+
+        m_title = Label(frame, text="Biodata",fg="white", bg="grey", compound=CENTER,font=("times new roman", 20, "bold"))
+        m_title.grid(row=0, columnspan=2,padx=10, pady=20)
+
+        id = Label(frame, text="Id Pasien",bg="grey", font=("times new roman", 14, "bold"))
+        id.grid(row=1, column=0, padx=20, pady=10, sticky="w")
+
+        txt_id = Entry(frame, textvariable=self.id, font=("times new roman", 12, "bold"), bd=2)
+        txt_id.grid(row=1, column=1, padx=20, pady=20, sticky="w")
+
+        nama = Label(frame, text="Nama Lengkap Pasien", bg="grey", font=("times new roman", 14, "bold"))
+        nama.grid(row=2, column=0, padx=20, pady=10, sticky="w")
+
+        txt_nama = Entry(frame, textvariable=self.nama, font=("times new roman",12,"bold"),bd=2)
+        txt_nama.grid(row=2, column=1, padx=20, pady=20, sticky="w")
+
+        jk = Label(frame, text="Jenis Kelamin", bg="grey", font=("times new roman", 14, "bold"))
+        jk.grid(row=3, column=0, padx=20, pady=10, sticky="w")
+
+        txt_jk = ttk.Combobox(frame, textvariable=self.jk, font=("times new roman", 12, "bold"), width=20)
+        txt_jk['value'] = ('Laki-Laki', 'Perempuan')
+        txt_jk.grid(row=3, column=1, padx=20, pady=10)
+
+        umur = Label(frame, text="Umur", bg="grey", font=("times new roman", 14, "bold"))
+        umur.grid(row=4, column=0, padx=20, pady=10, sticky="w")
+
+        txt_umur = Entry(frame, textvariable=self.umur, font=("times new roman", 12, "bold"), bd=2)
+        txt_umur.grid(row=4, column=1, padx=20, pady=10, sticky="w")
+
+        c_title = Label(frame, text="Hasil Tes", fg="white", bg="grey", compound=CENTER,font=("times new roman", 20, "bold"))
+        c_title.grid(row=5, columnspan=2, padx=10, pady=10)
+
+        schr = Label(frame, text="Schirmer Right(mm/5min)", bg="grey", font=("times new roman", 14, "bold"))
+        schr.grid(row=6, column=0, padx=20, pady=10, sticky="w")
+
+        txt_schr = Entry(frame, textvariable=self.schr, font=("times new roman", 12, "bold"), bd=2)
+        txt_schr.grid(row=6, column=1, padx=20, pady=10, sticky="w")
+
+        schl = Label(frame, text="Schirmer Left(mm/5min)", bg="grey", font=("times new roman", 14, "bold"))
+        schl.grid(row=7, column=0, padx=20, pady=10, sticky="w")
+
+        txt_schl = Entry(frame, textvariable=self.umur, font=("times new roman", 12, "bold"), bd=2)
+        txt_schl.grid(row=7, column=1, padx=20, pady=10, sticky="w")
+
+        cd4 = Label(frame, text="CD4 %", bg="grey", font=("times new roman", 14, "bold"))
+        cd4.grid(row=8, column=0, padx=20, pady=10, sticky="w")
+
+        txt_cd4 = Entry(frame, textvariable=self.cd4, font=("times new roman", 12, "bold"), bd=2)
+        txt_cd4.grid(row=8, column=1, padx=20, pady=10, sticky="w")
+
+        cd8 = Label(frame, text="CD8 %", bg="grey", font=("times new roman", 14, "bold"))
+        cd8.grid(row=9, column=0, padx=20, pady=10, sticky="w")
+
+        txt_cd8 = Entry(frame, textvariable=self.cd8, font=("times new roman", 12, "bold"), bd=2)
+        txt_cd8.grid(row=9, column=1, padx=20, pady=10, sticky="w")
+
+        btn_cek= Button(frame,text="Cek Hasil",font=("times new roman",14,"bold"))
+        btn_cek.grid(row=10, column=0,pady=20)
+
+
+        #frame2
+        frame = Frame(self.root, relief=RIDGE, bg="grey")
+        frame.place(x=500, y=70, width=625, height=620)
+
+        btn_cetak = Button
+
+
+
+
+
+
+
+root = Tk()
+obj=deteksi(root)
+root.mainloop()
+
+
